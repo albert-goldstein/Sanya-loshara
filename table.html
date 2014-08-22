@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <style>
 tr,td {background-color: silver;}
 </style>
@@ -10,10 +11,13 @@ table {border:1px hidden; border-radius:20px;}
 <style>
 .block {width:105px; height:105px; border:1px hidden gray; background-color:aqua; text-align:center; line-height:105px; color:gray; font-size:45px;}
 </style>
+<script>
+function Lf() {document.all.mytab.rows[0].cells[0].innerHTML=S;}
+</script>
 </head>
 
-<body>
-<table bgcolor="#808080" width="500" height="500" cellspacing="15">
+<body onkeypress="Lf()">
+<table id="mytab" bgcolor="#808080" width="500" height="500" cellspacing="15">
 <tr>
 	<td></td> <td></td> <td></td> <td></td>
 </tr>
@@ -28,7 +32,7 @@ table {border:1px hidden; border-radius:20px;}
 </tr>
 </table>
 <p></p>
-<div class="block">
+<div class="block" id="S">
 2
 </div>
 </body>

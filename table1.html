@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <meta charset="utf-8">
 <style>
 table {border: 1px hidden;
@@ -10,14 +11,21 @@ border-radius: 20px;}
 tr,td {background-color: silver;}
 </style>
 <style>
-.block {width:80px; height:80px; background-color:aqua; text-align:center; line-height:80px; color:gray; font-size:45px;}
+.block {width:100px; height:100px; background-color:aqua; text-align:center; line-height:100px; color:gray; font-size:45px;}
 </style>
+<!--<script>
+function Lf() {document.all.table.rows[0].cells[0]=document.getElementById("St");}
+</script>-->
 <script>
-function Lf() {document.all.table.rows[0].cells[0].innerHTML=Stu;}
+$(document).ready(function(){
+$("body").keypress(function(){
+    $("#St").clone().fadeIn("Slow").appendTo("#myAnchor");
+	});
+});
 </script>
 </head>
 
-<body onkeypress="Lf()">
+<body>
 <table id="table" cellspacing="15" bgcolor="#808080">
 <tr>
 	<td height="100" width="100" id="myAnchor"></td> <td height="100" width="100"></td> <td height="100" width="100"></td> <td height="100" width="100"></td>
@@ -33,17 +41,15 @@ function Lf() {document.all.table.rows[0].cells[0].innerHTML=Stu;}
 </tr>
 </table>
 <p></p>
-<div class="block" id="St">
+<div class="block" id="St" hidden>
 2
 </div>
 </br>
-<table>
+<!--<table>
 <tr>
 <td height="100" width="100" id="Stu">2</td>
 </tr>
 </table>
-<!--<script>
-function Lf() {document.getElementById('myAnchor').innerHTML = St;}
-</script>-->
+<button id="btn2">Set HTML</button>-->
 </body>
 </html>
